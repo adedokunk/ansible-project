@@ -1,0 +1,8 @@
+[servers]
+143.42.136.101
+143.42.136.137
+
+
+#[all]
+#node-1 ansible_ssh_host=143.42.136.101
+#node-2 ansible_ssh_host=143.42.136.137
