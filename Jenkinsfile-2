@@ -1,14 +1,12 @@
 pipeline {
   agent { label 'linux' }
- # environment {
- #  ANSIBLE_PRIVATE_KEY=credentials('mariadb-private-key') 
+  
   }
   stages {
-    stage('Hello') {
+    stage('Execute Ansible') {
       steps {
         sh 'ansible-galaxy collection install -r requirements.yml'
         sh 'ansiblePlaybook credentialsId: 'root', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.yml', playbook: 'ansible-play.yml''
       }
     }
   }
-}
