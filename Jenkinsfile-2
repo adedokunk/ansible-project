@@ -1,12 +1,13 @@
-pipeline {
-  agent { label 'linux' }
-  
-  }
-  stages {
-    stage('Execute Ansible') {
-      steps {
-        sh 'ansible-galaxy collection install -r requirements.yml'
-        sh 'ansiblePlaybook credentialsId: 'root', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.yml', playbook: 'ansible-play.yml''
-      }
+  pipeline{
+    agent { label 'linux'}
+
+    stages{
+        stage('hello') {
+            steps {
+                sh 'ansible-galaxy collection install -r requirements.yml'
+                sh 'ansiblePlaybook credentialsId: 'root', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.yml', playbook: 'ansible-play.yml''
+
+            }
+        }
     }
   }
