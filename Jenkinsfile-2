@@ -2,9 +2,9 @@
     agent any
 
     stages{
-        stage('hello') {}
+        stage('checkout') {
           steps {
-                git branch: 'master', url: 'https://github.com/adedokunk/ansible-project.git'
+                git branch: 'dev', url: 'https://github.com/adedokunk/ansible-project.git'
           }
         
     stages{
@@ -16,5 +16,6 @@
             }
         }
     }
-  }
+  }  
+    }
   }
