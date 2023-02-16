@@ -1,12 +1,6 @@
-  pipeline {
+ pipeline {
     agent any
 
-    stages{
-        stage('checkout') {
-          steps {
-                git branch: 'dev', url: 'https://github.com/adedokunk/ansible-project.git'
-          }
-        
     stages{
         stage('hello') {
             steps {
@@ -17,5 +11,4 @@
         }
     }
   }  
-    }
-  }
+
