@@ -1,13 +1,10 @@
 pipeline {
   agent any
-  environment {
-   ANSIBLE_PRIVATE_KEY=credentials('private-key.txt') 
-  }
   stages {
     stage('Hello') {
       steps {
         sh 'ansible-galaxy collection install -r requirements.yml'
-        sh 'ansible-playbook -i inventory/dev-inv.yml --private-key=$ANSIBLE_PRIVATE_KEY playbooks/ansible-play.yml'
+        sh 'ansiblePlaybook colorized: true, installation: 'Ansible', inventory: 'inventory', playbook: 'ansible-play.yml',tags: "" , skippedTags: "", extras: "--extra-vars ' hst=targetHost'
       }
     }
   }
