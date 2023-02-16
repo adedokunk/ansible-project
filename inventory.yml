@@ -4,7 +4,7 @@
 
 
 [targetHost]
-143.42.136.129 ansible_ssh_user=sshuse
+143.42.136.129 ansible_ssh_user=sshuser
 
 [all:vars]
 ansible_connection=ssh
