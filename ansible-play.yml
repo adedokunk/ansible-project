@@ -1,5 +1,5 @@
 ---
-  - hosts: servers
+  - hosts: all
     become: yes
     tasks:
     - name: enable and start firewalld service
