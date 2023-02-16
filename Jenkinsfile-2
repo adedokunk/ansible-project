@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-   ANSIBLE_PRIVATE_KEY=credentials('ansibleID') 
+   ANSIBLE_PRIVATE_KEY=credentials('private-key.txt') 
   }
   stages {
     stage('Hello') {
