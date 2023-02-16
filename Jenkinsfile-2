@@ -1,6 +1,12 @@
-  pipeline{
+  pipeline {
     agent any
 
+    stages{
+        stage('hello') {}
+          steps {
+                git branch: 'master', url: 'https://github.com/adedokunk/ansible-project.git'
+          }
+        
     stages{
         stage('hello') {
             steps {
@@ -10,4 +16,5 @@
             }
         }
     }
+  }
   }
