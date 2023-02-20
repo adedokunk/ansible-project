@@ -1,0 +1,14 @@
+ pipeline {
+    agent any
+
+    stages{
+        stage('hello') {
+            steps {
+                sh "ansible-galaxy collection install -r requirements.yml"
+                sh "ansiblePlaybook credentialsId: 'root', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.yml', playbook: 'ansible-play.yml"
+
+            }
+        }
+    }
+  }  
+

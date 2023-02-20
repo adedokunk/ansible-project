@@ -1,0 +1,12 @@
+#[servers]
+#143.42.136.101
+#143.42.136.137
+
+
+[targetHost]
+143.42.136.129 ansible_ssh_user=root
+143.42.136.101 ansible_ssh_user=root
+143.42.136.137 ansible_ssh_user=root
+[all:vars]
+ansible_connection=ssh
+ansible_ssh_common_args='-o StrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-dss'
